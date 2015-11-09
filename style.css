@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+/*GENERAL CLASSES*/
+body *{
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: cornsilk;
+}
+
+body {
+    background-color: #404040;
+}
+
+/*RESETING RULES*/
+.margin {
+    margin: 0;
+}
+
+.padding {
+    padding: 0;
+}
+
+.float {
+    clear: both;
+}
+
+.clearAll {
+    margin: 0;
+    padding: 0;
+    clear: both;
+}
+
+/*REGURAL CLASSES*/
+
+#all{
+    width: 470px;
+    height: 470px;
+    margin: 20px auto;
+}   
+
+.rows {
+    width: 470px;
+    height: 52px;
+    clear: both;
+}
+
+.cell {
+    color: black;
+    width: 50px;
+    height: 50px;
+    float: left;
+    border: 1px black solid;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.sqr1 {
+    background-color: #aaaaaa;
+}
+
+.sqr2 {
+    background-color: #888888;
+}
+
+.sqr3 {
+    background-color: #555555;
+}
+
+.sqr4 {
+    background-color: #a71c20;
+}
+
+.sqr5 {
+    background-color: #f617a0;
+}
+
+.sqr6 {
+    background-color: #b716a9;
+}
+
+.sqr7 {
+    background-color: #affb0c;
+}
+
+.sqr8 {
+    background-color: #ffaa0c;
+}
+
+.sqr9 {
+    background-color: #0cffaa;
+}
+
+
+/**** TESTY ****/
+#demo {
+    width: 100px;
+    height: 100px;
+    margin: 30px auto;
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
