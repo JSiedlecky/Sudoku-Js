@@ -120,50 +120,104 @@ function generuj_zawartosc(){
     var tab = new Array(9);
     
     for(i = 0; i<9; i++){
-        var randomed = (Math.random() * 8 + 1);
-        var rounded = Math.round(randomed);
-        
-        var current = tab.indexOf(rounded);
-        if(current != -1){
+//DWIE ZMIENNE REPREZENTUJĄCE RANDOMOWE WARTOSCI
+        var random = (Math.random()*8 + 1);
+        var round = Math.round(random);
+//ZMIENNA INDEX SPRAWDZA CZY W TABLICY TAB JEST JUZ DANY ELEMENT, JEZELI JEST ZWRACA WARTOSC KOMÓRKI W KTÓREJ SIĘ ZNAJDUJE, CZYLI JEZELI INDEX ZWRACA WARTOSC INNA OD -1 (-1 JEST ZWRACANE JEZELI TABLICA NIE ZAWIERA ELEMENTU) TO ZMNIEJSZAMY PETLE PRZEZ CO MAMY PEWNOSC ZE NASZE LICZBY SIE NIGDY NIE POWTORZA W DANYM RZEDZIE/KOLUMNIE/KWADRACIE;        
+        var index = tab.indexOf(round);
+        if(index != -1){
             i--;
         }else{
-            tab[i] = rounded;
+            tab[i] = round;
+            cell[i].innerHTML = tab[i];
         }
-        console.log(tab[i]);
-        cell[i] = tab[i];
-        cell[i].innerHTML = tab[i];
+    }
+//ZMIENNE DO PIERWSZEGO KROKU LOSOWANIA LICZB
+    var licznik = new Array(9);
+    for(i = 0; i<9; i++){
+        licznik[i] = 0;    
     }
     
-    console.log("KURWAAAA");
-    
-    for(i = 1; i<9; i++){
-        var current = parseInt(cols[i-1][0].innerHTML);
-        console.log(cols[i-1][0]);
-        cols[0][i].innerHTML = current + 1;
-        cols[1][i].innerHTML = current + 1;
-        cols[2][i].innerHTML = current + 1;
-        cols[3][i].innerHTML = current + 1;
-        cols[4][i].innerHTML = current + 1;
-        cols[5][i].innerHTML = current + 1;
-        cols[6][i].innerHTML = current + 1;
-        cols[7][i].innerHTML = current + 1;
-        cols[8][i].innerHTML = current + 1;
+    var liczby = new Array(9);
+    for(i = 0; i<9; i++){
+        liczby = tab[i] + licznik[i];
+        licznik[i]++;
+    }
+ //PĘTLA WPISUJĄCA WARTOSCI WEDŁUG WZORU <PIERWSZE MIEJSCE W KOLUMNIE +1, POTEM KAZDE NASTEPNE +1>   
+    for(i = 1; i<9; i++) {
         
-//        console.log(rows[0][i]);
-//        console.log(rows[1][i]);
-//        console.log(rows[2][i]);
-//        console.log(rows[3][i]);
-//        console.log(rows[4][i]);
-//        console.log(rows[5][i]);
-//        console.log(rows[6][i]);
-//        console.log(rows[7][i]);
-//        console.log(rows[8][i]);
-    }
-    
+        cols[0][i].innerHTML = tab[0] + licznik[0];
+        cols[1][i].innerHTML = tab[1] + licznik[1];
+        cols[2][i].innerHTML = tab[2] + licznik[2];
+        cols[3][i].innerHTML = tab[3] + licznik[3];
+        cols[4][i].innerHTML = tab[4] + licznik[4];
+        cols[5][i].innerHTML = tab[5] + licznik[5];
+        cols[6][i].innerHTML = tab[6] + licznik[6];
+        cols[7][i].innerHTML = tab[7] + licznik[7];
+        cols[8][i].innerHTML = tab[8] + licznik[8];
+       // console.log(tab[i]+licznik[i]);
+        
+        if((tab[0]+licznik[0]) >= 9){
+            tab[0] = 0;
+            licznik[0] = 0;
+            console.log(tab[0]+licznik[0]);
+        }
+        
+        if((tab[1]+licznik[1]) >= 9){
+            console.log(tab[1]+licznik[1]);
+            tab[1] = 0;
+            licznik[1] = 0;
+        }
+        
+        if((tab[2]+licznik[2]) >= 9){
+            console.log(tab[2]+licznik[2]);
+            tab[2] = 0;
+            licznik[2] = 0;
+        }
+        
+        if((tab[3]+licznik[3]) >= 9){
+            console.log(tab[3]+licznik[3]);
+            tab[3] = 0;
+            licznik[3] = 0;
+        }
+        
+        if((tab[4]+licznik[4]) >= 9){
+            console.log(tab[4]+licznik[4]);
+            tab[4] = 0;
+            licznik[4] = 0;
+        }
+        
+        if((tab[5]+licznik[5]) >= 9){
+            console.log(tab[5]+licznik[5]);
+            tab[5] = 0;
+            licznik[5] = 0;
+        }
+        
+        if((tab[6]+licznik[6]) >= 9){
+            console.log(tab[6]+licznik[6]);
+            tab[6] = 0;
+            licznik[6] = 0;
+        }
+        
+        if((tab[7]+licznik[7]) >= 9){
+            console.log(tab[7]+licznik[7]);
+            tab[7] = 0;
+            licznik[7] = 0;
+        }
+        
+        if((tab[8]+licznik[8]) >= 9){
+            console.log(tab[8]+licznik[8]);
+            tab[8] = 0;
+            licznik[8] = 0;
+        }
+        
+        for(j = 0; j<9; j++){
+            licznik[j]++;
+        }
+    }   
 }
 
 function main() {
- 
 
     tworz_divy();
     
